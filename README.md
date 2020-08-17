@@ -8,4 +8,4 @@ which produces geometric shapes based on Wolfram's elementary rules. In the seco
 forest fire automaton. The Game of Life Automaton produces short black and white animations which are basically rapidfire iterations through different images giving a slightly
 cartoonish impression. In the forest fire automaton, an approach common for modeling actual forest fires was implemented and shows how red dots (fires) on a green canvas(forest)
 spread during the iteration process.  In the third and final stage of this project I implemented two Lindenmayer generators which generate plant like shapes and figures that are 
-highly complex in their shapes. The Lindenmayer approach is a legitimate approach used in plant taxonomy.
+highly complex in their patterns. The Lindenmayer approach is a legitimate approach used in plant taxonomy.
