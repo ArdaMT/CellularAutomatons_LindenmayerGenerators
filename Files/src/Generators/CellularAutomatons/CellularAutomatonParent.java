@@ -61,13 +61,13 @@ public class CellularAutomatonParent extends Generator {
                 return false;
             } else if (Integer.parseInt(tfIteration.getText()) < 1) {
                 JOptionPane.showMessageDialog(null,
-                        "Wrong input! Please enter a positive integer number for the number of iterations.");
+                        "Invalid input! Please enter a positive integer number for the number of iterations.");
             }
             numberOfIterations = Integer.parseInt(tfIteration.getText());
 
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null,
-                    "Wrong input! Please enter a positive integer number for the number of iterations.");
+                    "Invalid input! Please enter a positive integer number for the number of iterations.");
             MainWindow.MainWindow.setStatus(name + " ready...");
             return false;
         }
@@ -94,13 +94,13 @@ public class CellularAutomatonParent extends Generator {
             }
             if(Integer.parseInt(tfHeight.getText()) > maxHeight || Integer.parseInt(tfHeight.getText()) < minHeight){
                 JOptionPane.showMessageDialog(null,
-                        "Wrong input! Please enter an integer number between "+minHeight+" and "+ maxHeight+" for height.");
+                        "Invalid input! Please enter an integer number between "+minHeight+" and "+ maxHeight+" for height.");
             }
             height = Integer.parseInt(tfHeight.getText());
 
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null,
-                    "Wrong input! Please enter an integer number between "+minHeight+" and "+ maxHeight+" for height.");
+                    "Invalid input! Please enter an integer number between "+minHeight+" and "+ maxHeight+" for height.");
             MainWindow.MainWindow.setStatus(name+" ready...");
             return false;
         }
@@ -119,14 +119,14 @@ public class CellularAutomatonParent extends Generator {
             }
             if(Integer.parseInt(tfWidth.getText()) > maxWidth || Integer.parseInt(tfWidth.getText()) < minWidth){
                 JOptionPane.showMessageDialog(null,
-                        "Wrong input! Please enter an integer number between " +minWidth+" and "+maxWidth +" for width.");
+                        "Invalid input! Please enter an integer number between " +minWidth+" and "+maxWidth +" for width.");
                 MainWindow.MainWindow.setStatus(name+" ready...");
             }
             width = Integer.parseInt(tfWidth.getText());
 
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null,
-                    "Wrong input! Please enter an integer number between " +minWidth+" and "+maxWidth +" for width.");
+                    "Invalid input! Please enter an integer number between " +minWidth+" and "+maxWidth +" for width.");
             MainWindow.MainWindow.setStatus(name+" ready...");
             return false;
         }

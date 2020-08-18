@@ -11,8 +11,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
-import javax.swing.*;
-
 /*
 In this class a simple generator is created, which only creates a blue circle
 that is equal to the  size of the width or height of the canvas depending on
@@ -26,7 +24,7 @@ public class SimpleGenerator extends CellularAutomatonParent {
         super(name, canvas);
         this.setTitle(name);
 
-    lblExplanation= new Label("This generator generates a blue circle. The circle's diameter" +
+    lblExplanation= new Label("This generator creates a blue circle. The circle's diameter" +
             "\nis the smaller of the input values for width and height.");
         lblExplanation.setFont(Font.font("Verdana", 12));
         setStopParameters();
@@ -61,26 +59,13 @@ public class SimpleGenerator extends CellularAutomatonParent {
         MainWindow.MainWindow.setStatus("generating...");
         MainWindow.MainWindow.setSaveMenuStatus(false);
         if(isCellularHeightValid()&&isCellularWidthValid()) {
-            try {
-                int h = Integer.parseInt(tfHeight.getText());
-                   int w = Integer.parseInt(tfWidth.getText());
-                if (((h < 0) || (w < 0)) || ((h > 5000) || (w > 5000))) {
 
-                    JOptionPane.showMessageDialog(null, "Please make sure "
-                                    + "that you enter a positive integer value for width and height.",
-                            "Error", JOptionPane.ERROR_MESSAGE);
-                } else {
-                    if (drawCircle(this.canvas, h, w)) {
+                    if (drawCircle(this.canvas, height, width)) {
                         MainWindow.MainWindow.setStatus("Simple Generator ready...");
                     }
 
-                }
-            } catch (NumberFormatException ne) {
-                MainWindow.MainWindow.setStatus("Wrong Entry - Simple Generator ready...");
-                JOptionPane.showMessageDialog(null, "Please make sure "
-                                + "that you enter a positive integer value for width and height.",
-                        "Error", JOptionPane.ERROR_MESSAGE);
-            }
+
+
         }else{
             setAlwaysOnTop(true);
         }

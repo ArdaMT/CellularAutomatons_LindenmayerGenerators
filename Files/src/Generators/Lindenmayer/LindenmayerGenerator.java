@@ -236,7 +236,7 @@ public class LindenmayerGenerator extends LGeneratorsParent {
             cellMachine.axiom = tfAxiom.getText();
 
         if (cellMachine.isAxiomValid(cellMachine.axiom, cellMachine.alphabet) == false) {
-            JOptionPane.showMessageDialog(null, "Wrong input! Please use only the capital letters X and Y for your axiom." +
+            JOptionPane.showMessageDialog(null, "Invalid input! Please use only the capital letters X and Y for your axiom." +
                     "\n Make sure that the letter you've chosen for your axiom is included in your alphabet.");
             enableButton(generateButton);
             return false;
@@ -257,7 +257,7 @@ public class LindenmayerGenerator extends LGeneratorsParent {
             cellMachine.productionRules = cellMachine.productionRules.replace("\n", "");
 
         if (cellMachine.isRuleValid(cellMachine.productionRules, cellMachine.alphabet) == false) {
-            JOptionPane.showMessageDialog(null, "Wrong input! Please only use the alphabet and axiom elements " +
+            JOptionPane.showMessageDialog(null, "Invalid input! Please only use the alphabet and axiom elements " +
                     "\nfor production rules before attempting to generate an image." +
                     "\nSee the help box for further information. ");
             enableButton(generateButton);

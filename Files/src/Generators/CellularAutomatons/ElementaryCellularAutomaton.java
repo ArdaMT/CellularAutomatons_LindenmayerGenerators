@@ -178,14 +178,14 @@ public class ElementaryCellularAutomaton extends CellularAutomatonParent {
             }
             else if (Integer.parseInt(tfRuleIndex.getText()) < 0 || Integer.parseInt(tfRuleIndex.getText()) > 255){
                 JOptionPane.showMessageDialog(null,
-                        "Wrong input! Please choose a rule by entering an integer number between 0 and 255.");
+                        "Invalid input! Please choose a rule by entering an integer number between 0 and 255.");
                 enableButton(generateButton);
                 return false;
             }
             currentRuleIndex = Integer.parseInt(tfRuleIndex.getText());
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null,
-                    "Wrong input! Please choose a rule by entering an integer number between 0 and 255.");
+                    "Invalid input! Please choose a rule by entering an integer number between 0 and 255.");
         }
         return true;
     }

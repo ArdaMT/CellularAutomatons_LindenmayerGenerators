@@ -115,7 +115,7 @@ public class LGeneratorsParent extends Generator {
                 return false;
             }
             else if( Double.parseDouble(tfAngle.getText()) < 0){
-                JOptionPane.showMessageDialog(null, "Wrong input! Please choose a number between 0 and 360 for the angle. " +
+                JOptionPane.showMessageDialog(null, "Invalid input! Please choose a number between 0 and 360 for the angle. " +
                         "\n Also fractions are allowed.");
                 enableButton(generateButton);
                 return false;
@@ -123,7 +123,7 @@ public class LGeneratorsParent extends Generator {
             angle = Double.parseDouble(tfAngle.getText());
 
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Wrong input! Please choose a number between 0 and 360 for the angle. " +
+            JOptionPane.showMessageDialog(null, "Invalid input! Please choose a number between 0 and 360 for the angle. " +
                     "\n Also fractions are allowed.");
             enableButton(generateButton);
             return false;
@@ -140,14 +140,14 @@ public class LGeneratorsParent extends Generator {
                 return false;
             }
             else if( Double.parseDouble(tfLength.getText()) < 1){
-                JOptionPane.showMessageDialog(null, "Wrong input! Please enter a positive integer number for the length.");
+                JOptionPane.showMessageDialog(null, "Invalid input! Please enter a positive integer number for the length.");
                 enableButton(generateButton);
                 return false;
             }
             length = Double.parseDouble(tfLength.getText());
 
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(null, "Wrong input! Please enter a positive integer number for the length.");
+            JOptionPane.showMessageDialog(null, "Invalid input! Please enter a positive integer number for the length.");
             enableButton(generateButton);
             return false;
         }
@@ -173,13 +173,13 @@ public class LGeneratorsParent extends Generator {
             }
             if(Integer.parseInt(tfHeight.getText()) > maxHeight || Integer.parseInt(tfHeight.getText()) < minHeight){
                 JOptionPane.showMessageDialog(null,
-                        "Wrong input! Please enter an integer number between "+minHeight+" and "+ maxHeight+" for height.");
+                        "Invalid input! Please enter an integer number between "+minHeight+" and "+ maxHeight+" for height.");
             }
             height = Integer.parseInt(tfHeight.getText());
 
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null,
-                    "Wrong input! Please enter an integer number between "+minHeight+" and "+ maxHeight+" for height.");
+                    "Invalid input! Please enter an integer number between "+minHeight+" and "+ maxHeight+" for height.");
             MainWindow.MainWindow.setStatus(name+" ready...");
             return false;
         }
@@ -198,14 +198,14 @@ public class LGeneratorsParent extends Generator {
             }
             if(Integer.parseInt(tfWidth.getText()) > maxWidth || Integer.parseInt(tfWidth.getText()) < minWidth){
                 JOptionPane.showMessageDialog(null,
-                        "Wrong input! Please enter an integer number between " +minWidth+" and "+maxWidth +" for width.");
+                        "Invalid input! Please enter an integer number between " +minWidth+" and "+maxWidth +" for width.");
                 MainWindow.MainWindow.setStatus(name+" ready...");
             }
             width = Integer.parseInt(tfWidth.getText());
 
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null,
-                    "Wrong input! Please enter an integer number between " +minWidth+" and "+maxWidth +" for width.");
+                    "Invalid input! Please enter an integer number between " +minWidth+" and "+maxWidth +" for width.");
             MainWindow.MainWindow.setStatus(name+" ready...");
             return false;
         }

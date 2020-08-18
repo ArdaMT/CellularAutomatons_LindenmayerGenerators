@@ -238,7 +238,7 @@ public class LindenmayerStochasticGenerator extends LGeneratorsParent {
 
         if (cellMachine.isAlphabetValid(cellMachine.alphabet, cellMachine.VARIABLES,
                 cellMachine.CONSTANTS) == false || "".equals(cellMachine.alphabet)) {
-            JOptionPane.showMessageDialog(null, "Wrong input! Please use  capital letters of your choice from the english" +
+            JOptionPane.showMessageDialog(null, "Invalid input! Please use  capital letters of your choice from the english" +
                     "\nalphabet and the following characters to define your alphabet: &,+,-,[,]" +
                     "\nUse commas between the elements.");
             enableButton(generateButton);
@@ -261,7 +261,7 @@ public class LindenmayerStochasticGenerator extends LGeneratorsParent {
             }
             if (cellMachine.isAxiomValid(cellMachine.axiom, cellMachine.alphabet) == false) {
 
-                JOptionPane.showMessageDialog(null, "Wrong input!. Please use only a single capital letter for your axiom." +
+                JOptionPane.showMessageDialog(null, "Invalid input!. Please use only a single capital letter for your axiom." +
                         "\n You can use any letter from your own alphabet as an axiom.");
                 enableButton(generateButton);
                 return false;
@@ -281,7 +281,7 @@ public class LindenmayerStochasticGenerator extends LGeneratorsParent {
                 cellMachine.stochasticRulesString = cellMachine.stochasticRulesString.replace("\n", "");
             }
             if (cellMachine.isRuleValid(cellMachine.stochasticRulesString, cellMachine.alphabet) == false) {
-                JOptionPane.showMessageDialog(null, "Wrong input! Please only use the alphabet and axiom elements " +
+                JOptionPane.showMessageDialog(null, "Invalid input! Please only use the alphabet and axiom elements " +
                         "\nfor production rules. See the help box for further information.");
                 enableButton(generateButton);
                 return false;
@@ -305,7 +305,7 @@ public class LindenmayerStochasticGenerator extends LGeneratorsParent {
                     return false;
                 }
             } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, " Wrong input! Please choose a number between 1 and 15 for the recursion depth." +
+                JOptionPane.showMessageDialog(null, "Invalid input! Please choose a number between 1 and 15 for the recursion depth." +
                         "\nNumbers between 12 and 15 can sometimes cause performance problems.");
                 enableButton(generateButton);
                 return false;
