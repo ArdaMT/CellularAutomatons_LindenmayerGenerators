@@ -55,8 +55,8 @@ public class CellularAutomatonParent extends Generator {
         try {
             if (isEmpty(tfIteration)) {
                 JOptionPane.showMessageDialog(null,
-                        "This field cannot be empty. Please enter a positive " +
-                                "\ninteger number for the number of iterations.");
+                        "The number of iterations cannot be empty. Please  " +
+                                "\nenter a positive integer number for this field.");
                 MainWindow.MainWindow.setStatus(name + " ready...");
                 return false;
             } else if (Integer.parseInt(tfIteration.getText()) < 1) {
@@ -87,20 +87,20 @@ public class CellularAutomatonParent extends Generator {
         try {
             if (isEmpty(tfHeight)){
                 JOptionPane.showMessageDialog(null,
-                        "This field cannot be empty. Please enter an integer number " +
-                                "\nbetween " +minHeight+" and "+maxHeight +" for width.");
+                        "Canvas height cannot be empty. Please enter an integer number " +
+                                "\nbetween " +minHeight+" and "+maxHeight +" for the height.");
                 MainWindow.MainWindow.setStatus(name+" ready...");
                 return false;
             }
             if(Integer.parseInt(tfHeight.getText()) > maxHeight || Integer.parseInt(tfHeight.getText()) < minHeight){
                 JOptionPane.showMessageDialog(null,
-                        "Invalid input! Please enter an integer number between "+minHeight+" and "+ maxHeight+" for height.");
+                        "Invalid input! Please enter an integer number between "+minHeight+" and "+ maxHeight+" for the height.");
             }
             height = Integer.parseInt(tfHeight.getText());
 
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null,
-                    "Invalid input! Please enter an integer number between "+minHeight+" and "+ maxHeight+" for height.");
+                    "Invalid input! Please enter an integer number between "+minHeight+" and "+ maxHeight+" for  the height.");
             MainWindow.MainWindow.setStatus(name+" ready...");
             return false;
         }
@@ -112,21 +112,21 @@ public class CellularAutomatonParent extends Generator {
         try {
             if (isEmpty(tfWidth)) {
                 JOptionPane.showMessageDialog(null,
-                        "This field cannot be empty. Please enter an integer number " +
-                                "\nbetween " +minWidth+" and "+maxWidth +" for width.");
+                        "Canvas Width cannot be empty. Please enter an integer number " +
+                                "\nbetween " +minWidth+" and "+maxWidth +" for the width.");
                 MainWindow.MainWindow.setStatus(name+" ready...");
                 return false;
             }
             if(Integer.parseInt(tfWidth.getText()) > maxWidth || Integer.parseInt(tfWidth.getText()) < minWidth){
                 JOptionPane.showMessageDialog(null,
-                        "Invalid input! Please enter an integer number between " +minWidth+" and "+maxWidth +" for width.");
+                        "Invalid input! Please enter an integer number between " +minWidth+" and "+maxWidth +" for the width.");
                 MainWindow.MainWindow.setStatus(name+" ready...");
             }
             width = Integer.parseInt(tfWidth.getText());
 
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null,
-                    "Invalid input! Please enter an integer number between " +minWidth+" and "+maxWidth +" for width.");
+                    "Invalid input! Please enter an integer number between " +minWidth+" and "+maxWidth +" for the width.");
             MainWindow.MainWindow.setStatus(name+" ready...");
             return false;
         }

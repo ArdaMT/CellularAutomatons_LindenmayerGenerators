@@ -20,7 +20,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.util.Duration;
-
 import javax.swing.*;
 import java.util.Random;
 import java.util.logging.Level;
@@ -80,26 +79,8 @@ public class ForestFireAutomaton extends CellularAutomatonParent {
         }
         MainWindow.MainWindow.setStatus("generating...");
         MainWindow.MainWindow.setSaveMenuStatus(false);
-        if(isCellularHeightValid()&&isCellularWidthValid()&&isNumberOfIterationsValid()) {
-
-            try {
-                numberOfIterations = Integer.parseInt(tfIteration.getText());
-            } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "Please enter the number of iterations!");
-                MainWindow.MainWindow.setStatus("Forest Fire Generator ready...");
-                return;
-            }
-            if (tfNumberOfFires.getText().isEmpty() || Integer.parseInt(tfNumberOfFires.getText()) < 1) {
-                JOptionPane.showMessageDialog(null,
-                        "Please enter a positive integer value for the number of fires!");
-                MainWindow.MainWindow.setStatus("Forest Fire Generator ready...");
-                return;
-            } else {
-                numberOfFires = Integer.parseInt(tfNumberOfFires.getText());
-
-            }
-
-
+        if(isCellularHeightValid()&&isCellularWidthValid()
+                &&isNumberOfIterationsValid()&&isNumberOfFiresValid()) {
             cellSize = (int) pixelChoiceBox.getSelectionModel().getSelectedItem();
 
             //canvas is built based on the textField input values which are rounded down, if they are not a multiple of the cellsize
@@ -183,7 +164,7 @@ public class ForestFireAutomaton extends CellularAutomatonParent {
                     gc.fillRect(i - 1 * cellSize, j - 1 * cellSize, cellSize, cellSize);
 
                 } else if (cells[i][j][0] == TREE) {
-                    if (checkBurningNeighbours(i, j) == true) {
+                    if (hasBurningNeighbours(i, j) == true) {
                         cells[i][j][0] = FIRE;
                         gc.setFill(Color.RED);
 
@@ -205,7 +186,7 @@ public class ForestFireAutomaton extends CellularAutomatonParent {
     }
 
     //check if the cell has any burning neighbours.
-    private boolean checkBurningNeighbours(int a, int b) {
+    private boolean hasBurningNeighbours(int a, int b) {
         for (int i = -1; i <= 1; i++) {
             for (int j = -1; j <= 1; j++) {
                 if (cells[a + i][b + j][0] == FIRE) {
@@ -215,7 +196,31 @@ public class ForestFireAutomaton extends CellularAutomatonParent {
         }
         return false;
     }
-
+private boolean isNumberOfFiresValid() {
+    if (tfNumberOfFires.getText().isEmpty() ) {
+        JOptionPane.showMessageDialog(null,
+                "The number of fires cannot be empty. Please enter a positive number for this field!");
+        MainWindow.MainWindow.setStatus("Forest Fire Generator ready...");
+        return false;
+    }
+    else {
+        try {
+            if(Integer.parseInt(tfIteration.getText())<1){
+                JOptionPane.showMessageDialog(null, "Wrong input! Please enter a positive number of iterations!");
+                MainWindow.MainWindow.setStatus("Forest Fire Generator ready...");
+                return false;
+            }
+            else{
+                numberOfIterations = Integer.parseInt(tfIteration.getText());
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Wrong input! Please enter a positive number of iterations!");
+            MainWindow.MainWindow.setStatus("Forest Fire Generator ready...");
+            return false;
+        }
+    }
+        return true;
+}
     private void setGridLayout() {
         //Layout for Generator window
          grid = new GridPane();

@@ -171,7 +171,7 @@ public class ElementaryCellularAutomaton extends CellularAutomatonParent {
         try {
             if (isEmpty(tfRuleIndex)) {
                 JOptionPane.showMessageDialog(null,
-                        "This field cannot be empty. Please choose a rule by entering" +
+                        "The rule number cannot be empty. Please choose a rule by entering" +
                                 "\nan integer number between 0 and 255.");
                 enableButton(generateButton);
                 return false;

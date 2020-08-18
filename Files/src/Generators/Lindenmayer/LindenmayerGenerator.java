@@ -215,9 +215,9 @@ public class LindenmayerGenerator extends LGeneratorsParent {
             cellMachine.alphabet=cellMachine.alphabet.replace(",", "");
 
         if (cellMachine.isAlphabetValid(cellMachine.alphabet) == false) {
-            JOptionPane.showMessageDialog(null, "Please use only capital letters of your choice from the english alphabet" +
-                    " \n and the following characters to define your alphabet: +,-,[,]" +
-                    "\n Use commas between the elements. This field cannot be empty.");
+            JOptionPane.showMessageDialog(null, "The alphabet cannot be empty.Please use only capital letters of your choice " +
+                    " \nfrom the english alphabet and the following characters to define " +
+                    "\nyour alphabet: +,-,[,]. Use commas between the elements.");
             enableButton(generateButton);
             return false;
         }
@@ -227,7 +227,7 @@ public class LindenmayerGenerator extends LGeneratorsParent {
 
     private boolean isAxiomInputValid() {
         if (isEmpty(tfAxiom)) {
-            JOptionPane.showMessageDialog(null, "This field cannot be empty. Please use only the capital letters X " +
+            JOptionPane.showMessageDialog(null, "Axiom cannot be empty. Please use only the capital letters X " +
                     "\nand Y for your axiom. Make sure that the letter you've chosen " +
                     "\nfor your axiom is included in your alphabet. ");
             enableButton(generateButton);
@@ -246,8 +246,8 @@ public class LindenmayerGenerator extends LGeneratorsParent {
 
     private boolean isProductionRulesInputValid() {
         if (isEmpty(taProductionRules)) {
-            JOptionPane.showMessageDialog(null, "This field cannot be empty. Please only use the alphabet and axiom " +
-                    "\nelements for production rules before attempting to generate an image." +
+            JOptionPane.showMessageDialog(null, "Produciton rules cannot be empty. Please only use the alphabet and" +
+                    "\naxiom elements for production rules before attempting to generate an image." +
                     "\nSee the help box for further information. ");
             enableButton(generateButton);
             return false;

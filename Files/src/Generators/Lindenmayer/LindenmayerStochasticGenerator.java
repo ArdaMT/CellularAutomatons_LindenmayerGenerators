@@ -226,7 +226,7 @@ public class LindenmayerStochasticGenerator extends LGeneratorsParent {
     private boolean isAlphabetInputValid() {
 
         if (isEmpty(tfAlphabet)) {
-            JOptionPane.showMessageDialog(null, "This field cannot be empty. Please use  capital letters of your choice from the" +
+            JOptionPane.showMessageDialog(null, "Alphabet cannot be empty. Please use  capital letters of your choice from the" +
                     "\nenglish alphabet and the following characters to define your alphabet: &,+,-,[,]" +
                     "\nUse commas between the elements.");
             enableButton(generateButton);
@@ -252,7 +252,7 @@ public class LindenmayerStochasticGenerator extends LGeneratorsParent {
 
         if (isEmpty(tfAxiom)) {
 
-                JOptionPane.showMessageDialog(null, "This field cannot be empty. Please use only a single capital " +
+                JOptionPane.showMessageDialog(null, "Axiom cannot be empty. Please use only a single capital " +
                         "\nletter for your axiom. You can use any letter from your alphabet.");
                 enableButton(generateButton);
                 return false;
@@ -271,8 +271,8 @@ public class LindenmayerStochasticGenerator extends LGeneratorsParent {
 
         private boolean isProductionRulesInputValid () {
             if (isEmpty(taProductionRules)) {
-                JOptionPane.showMessageDialog(null, "This field can not be empty. Please only use the alphabet and axiom elements " +
-                        "\nfor production rules. See the help box for further information. ");
+                JOptionPane.showMessageDialog(null, "Production rules can not be empty. Please only use the alphabet and axiom elements " +
+                        "\nfor this field. See the help box for further information. ");
                 enableButton(generateButton);
                 return false;
             } else {
@@ -291,7 +291,7 @@ public class LindenmayerStochasticGenerator extends LGeneratorsParent {
 
         private boolean isDepthInputValid () {
             if(isEmpty(tfRecursionDepth)){
-                JOptionPane.showMessageDialog(null, "This field cannot be empty. Please choose a number between 1 and 15 for the recursion depth. " +
+                JOptionPane.showMessageDialog(null, "Recursion depth cannot be empty. Please choose a number between 1 and 15 for this field. " +
                         "\nNumbers between 12 and 15 can sometimes cause performance problems. ");
                 enableButton(generateButton);
                 return false;
@@ -299,7 +299,7 @@ public class LindenmayerStochasticGenerator extends LGeneratorsParent {
             try {
                 cellMachine.recursionDepth = Integer.parseInt(tfRecursionDepth.getText());
                 if (cellMachine.recursionDepth < 1 || cellMachine.recursionDepth > 15) {
-                    JOptionPane.showMessageDialog(null, "Please choose a number between 1 and 15 for the recursion depth. " +
+                    JOptionPane.showMessageDialog(null, "Invalid input! Please choose a number between 1 and 15 for the recursion depth. " +
                             "\nNumbers between 12 and 15 can sometimes cause performance problems.");
                     enableButton(generateButton);
                     return false;

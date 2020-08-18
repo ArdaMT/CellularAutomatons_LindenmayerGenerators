@@ -109,8 +109,8 @@ public class LGeneratorsParent extends Generator {
     boolean isAngleInputValid() {
         try {
             if (isEmpty(tfAngle) ) {
-                JOptionPane.showMessageDialog(null, "Please choose a number between 0 and 360 for the angle. " +
-                "\n Also fractions are allowed. This field cannot be empty.");
+                JOptionPane.showMessageDialog(null, "Angle cannot be empty. Please choose a number between " +
+                "\n0 and 360for the angle. Also fractions are allowed.");
                 enableButton(generateButton);
                 return false;
             }
@@ -134,8 +134,7 @@ public class LGeneratorsParent extends Generator {
     boolean isLengthInputValid() {
         try {
             if (isEmpty(tfLength) ) {
-                JOptionPane.showMessageDialog(null, "Please enter a positive integer number for the length." +
-                        "\nThis field cannot be empty.");
+                JOptionPane.showMessageDialog(null, "Length cannot be empty. Please enter a positive integer number for the length.");
                 enableButton(generateButton);
                 return false;
             }
@@ -166,20 +165,20 @@ public class LGeneratorsParent extends Generator {
         try {
             if (isEmpty(tfHeight)){
                 JOptionPane.showMessageDialog(null,
-                        "This field cannot be empty. Please enter an integer number " +
-                                "\nbetween " +minHeight+" and "+maxHeight +" for width.");
+                        "Canvas height cannot be empty. Please enter an integer number " +
+                                "\nbetween " +minHeight+" and "+maxHeight +" for the height.");
                 MainWindow.MainWindow.setStatus(name+" ready...");
                 return false;
             }
             if(Integer.parseInt(tfHeight.getText()) > maxHeight || Integer.parseInt(tfHeight.getText()) < minHeight){
                 JOptionPane.showMessageDialog(null,
-                        "Invalid input! Please enter an integer number between "+minHeight+" and "+ maxHeight+" for height.");
+                        "Invalid input! Please enter an integer number between "+minHeight+" and "+ maxHeight+" for the height.");
             }
             height = Integer.parseInt(tfHeight.getText());
 
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null,
-                    "Invalid input! Please enter an integer number between "+minHeight+" and "+ maxHeight+" for height.");
+                    "Invalid input! Please enter an integer number between "+minHeight+" and "+ maxHeight+" for the height.");
             MainWindow.MainWindow.setStatus(name+" ready...");
             return false;
         }
@@ -191,21 +190,21 @@ public class LGeneratorsParent extends Generator {
         try {
             if (isEmpty(tfWidth)) {
                 JOptionPane.showMessageDialog(null,
-                        "This field cannot be empty. Please enter an integer number " +
-                                "\nbetween " +minWidth+" and "+maxWidth +" for width.");
+                        "Canvas width cannot be empty. Please enter an integer number " +
+                                "\nbetween " +minWidth+" and "+maxWidth +" for the width.");
                 MainWindow.MainWindow.setStatus(name+" ready...");
                 return false;
             }
             if(Integer.parseInt(tfWidth.getText()) > maxWidth || Integer.parseInt(tfWidth.getText()) < minWidth){
                 JOptionPane.showMessageDialog(null,
-                        "Invalid input! Please enter an integer number between " +minWidth+" and "+maxWidth +" for width.");
+                        "Invalid input! Please enter an integer number between " +minWidth+" and "+maxWidth +" for the width.");
                 MainWindow.MainWindow.setStatus(name+" ready...");
             }
             width = Integer.parseInt(tfWidth.getText());
 
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null,
-                    "Invalid input! Please enter an integer number between " +minWidth+" and "+maxWidth +" for width.");
+                    "Invalid input! Please enter an integer number between " +minWidth+" and "+maxWidth +" for the width.");
             MainWindow.MainWindow.setStatus(name+" ready...");
             return false;
         }
