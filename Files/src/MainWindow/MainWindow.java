@@ -52,7 +52,7 @@ public class MainWindow extends Application {
     private String[] generatorNames = new String[]{"Simple Generator",
             "Elementary Cellular Automaton", "GameOfLife Automaton",
             "Forest Fire Automaton", "Lindenmayer Generator",
-            "Lindenmayer Stochastic Generator", "Random Function Tree Generator"
+            "Lindenmayer Stochastic Generator"
     };
     private MenuItem simpleGenerator = new MenuItem(generatorNames[0]);
     private MenuItem elementaryCellularAutomaton = new MenuItem(generatorNames[1]);
@@ -60,7 +60,6 @@ public class MainWindow extends Application {
     private MenuItem forestFireAutomaton = new MenuItem(generatorNames[3]);
     private MenuItem lindenmayerGenerator = new MenuItem(generatorNames[4]);
     private MenuItem lindenmayerStochasticGenerator = new MenuItem(generatorNames[5]);
-    private MenuItem randomFunctionTreeGenerator = new MenuItem(generatorNames[6]);
     private static final MenuItem save = new MenuItem("Save Image");
     public static MenuItem saveAs = new MenuItem("Save as");
 
@@ -88,7 +87,7 @@ public class MainWindow extends Application {
         fileMenu.getItems().add(quit);
         generatorMenu.getItems().addAll(simpleGenerator, elementaryCellularAutomaton,
                 gameOfLifeAutomaton, forestFireAutomaton, lindenmayerGenerator,
-                lindenmayerStochasticGenerator, randomFunctionTreeGenerator);
+                lindenmayerStochasticGenerator);
         //Main Menu Bar
         MenuBar mainbar = new MenuBar();
         mainbar.getMenus().addAll(fileMenu, generatorMenu);
@@ -234,21 +233,6 @@ public class MainWindow extends Application {
             });
         });
 
-        randomFunctionTreeGenerator.setOnAction((ActionEvent t) -> {
-            generatorId = 6;
-            setStatus(generatorNames[generatorId] + " "
-                    + MainStatus.READY.toString());
-            setMenuItemStatus(true);
-            Generators.RandomFunctionTree.RandomFunctionTreeGenerator rGen =
-                    new Generators.RandomFunctionTree.RandomFunctionTreeGenerator(canvas,
-                            generatorNames[generatorId]);
-            rGen.show();
-            rGen.setOnCloseRequest(e -> {
-                rGen.setStopParameters();
-                setStatus(MainStatus.OK.toString());
-                setMenuItemStatus(false);
-            });
-        });
         // Event Handler
         clear.setOnAction((ActionEvent t) -> {
             setSaveMenuStatus(true);
